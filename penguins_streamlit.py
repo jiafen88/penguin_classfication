@@ -13,7 +13,8 @@ st.write("""
     penguin using a model built on the Palmer's Penguin's
     dataset. Use the form below to get started!""")
 
-password_guess = st.text_input('What is the Password?')
+password_guess = st.text_input('What is the Password?',
+                type="password")
 if password_guess != st.secrets["password"]:
     st.stop()
 
