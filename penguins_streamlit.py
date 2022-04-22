@@ -1,4 +1,4 @@
-from turtle import pen
+#from turtle import pen
 import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -79,14 +79,14 @@ new_prediction = rfc.predict([
     island_dream, island_torgerson, sex_female,
     sex_male]])
 prediction_species = unique_penguin_mapping[new_prediction][0]
-st.write(f'We predict your penguin is of the {prediction_species} species')
+st.write(f'We predict your penguin is of the **{prediction_species}** species')
 
 st.write('We used a machine learning (Random Forest) model to '
          'predict the species, the features used in this prediction '
         ' are ranked by relative importance below.')
 st.image('feature_importance.png')
 
-if penguin_df is not None:
+if penguin_df.shape[0] > 0:
     st.write('Below are the histograms for each continuous variable'
             'separated by penguin species. The vertical line '
             'represents your the inputted value.')
